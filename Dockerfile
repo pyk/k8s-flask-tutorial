@@ -9,4 +9,4 @@ RUN pip install -r /app/requirements.txt
 ADD . /app
 
 ENV PORT 8080
-CMD ["python", "app.py"]
+CMD ["gunicorn", "app:app", "--config=config.py"]
